@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title class="maven-pro-title">SAVED ITEMS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Back button to navigate to the home page -->
+  <ion-button fill="clear" (click)="goToHomePage()">
+    <ion-icon name="arrow-back" color="dark"></ion-icon>
+  </ion-button>
+
+  <ng-container *ngIf="favorites.length > 0; else noFavorites">
+    <ion-row style="align-items: center; margin-top: 20px;" *ngFor="let fav of favorites">
+      <!-- Favorites list content -->
+      <ion-col size="12" size-md="6">
+        <ion-item>
+          <ion-thumbnail slot="start" style="width: 80px; height: 80px;">
+            <img [src]="fav.image" alt="{{ fav.title }}" style="width: 100%; height: 100%; object-fit: cover;">
+          </ion-thumbnail>
+
+          <ion-label style="margin-left: 10px;">
+            <h2 class="robot-mono-text" style="font-size: 14px; margin-bottom: 5px;">{{ fav.title }}</h2>
+
+            <!-- Button under the image, title, and text -->
+            <ion-row>
+              <!-- Move to Bag button -->
+              <ion-button expand="full" color="primary" (click)="moveToBag(fav)">Add to cart</ion-button>
+
+              <!-- Delete button -->
+              <ion-button expand="full" color="primary" (click)="deleteFromFavorites(fav)">Delete</ion-button>
+            </ion-row>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ng-container>
+
+  <!-- Display message if there are no favorites -->
+  <ng-template #noFavorites>
+    <div *ngIf="favorites.length === 0" style="text-align: center; margin-top: 240px;">
+      <ion-label class="robot-mono-text" style="font-size: 16px;">You don't have any favorites</ion-label>
+    </div>
+  </ng-template>
+
+ <!-- Icons -->
+<div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff; padding: 5px; display: flex; justify-content: space-around; border-top-left-radius: 30px; border-top-right-radius: 30px; border-top: 1px solid #ddd;">
+
+  <!-- Home -->
+  <ion-button fill="clear" (click)="goToHomePage()">
+    <ion-label style="font-family: 'Maven Pro', sans-serif; font-weight: bold; font-size: 25px; color: dark;">T.</ion-label>
+  </ion-button>
+
+  <!-- Search -->
+  <ion-button fill="clear">
+    <ion-icon name="search-outline" color="dark"></ion-icon>
+  </ion-button>
+
+  <!-- Favorites -->
+  <ion-button fill="clear">
+    <ion-icon name="heart-outline" color="dark"></ion-icon>
+  </ion-button>
+
+  <!-- Profile -->
+  <ion-button fill="clear">
+    <ion-icon name="person-outline" color="dark"></ion-icon>
+  </ion-button>
+
+</div>
+
+<!-- Icons -->
+<div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff; padding: 5px; display: flex; justify-content: space-around; border-top-left-radius: 30px; border-top-right-radius: 30px; border-top: 1px solid #ddd;">
+
+  <!-- Icon 1 - Home -->
+  <ion-button fill="clear" (click)="goToHomePage()">
+    <ion-label style="font-family: 'Maven Pro', sans-serif; font-weight: bold; font-size: 25px; color: dark;">T.</ion-label>
+  </ion-button>
+  
+   <!-- Icon 2 - Search -->
+   <ion-button fill="clear" (click)="goToSearchPage()">
+     <ion-icon name="search-outline" color="dark"></ion-icon>
+   </ion-button>
+  
+  
+  
+  <!-- Icon 4 - Favorites -->
+  <ion-button fill="clear" (click)="goToFavouritesPage()">
+   <ion-icon name="heart-outline" color="dark"></ion-icon>
+  </ion-button>
+  
+  
+   <!-- Icon 5 - Profile -->
+   <ion-button fill="clear" (click)="goToAccountPage()">
+     <ion-icon name="person-outline" color="dark"></ion-icon>
+   </ion-button>
+  
+  </div>
+  
+  </ion-content>

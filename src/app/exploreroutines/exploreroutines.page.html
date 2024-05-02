@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Explore Routines</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Introduction -->
+  <div class="intro">
+    <h1>Welcome to Explore Routines</h1>
+    <p>Discover effective skincare routines tailored to your skin type and concerns.</p>
+  </div>
+
+ <!-- Skincare Routine Cards -->
+<ion-card class="routine-card">
+  <ion-card-header class="card-header">
+    <ion-card-title>Morning Routine</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <!-- Description of Morning Routine -->
+    <p>Start your day with these essential skincare steps:</p>
+    <!-- List of Morning Routine Steps -->
+    <ul>
+      <li>Step 1: Cleanser</li>
+      <li>Step 2: Toner</li>
+      <li>Step 3: Serum</li>
+      <li>Step 4: Moisturizer</li>
+      <li>Step 5: Eye Cream</li>
+      <li>Step 6: Sun Cream</li>
+    </ul>
+    <!-- Embedded Morning Routine Video -->
+    <div style="margin-top: 15px;">
+      <video controls style="width: 100%; height: 200px; border-radius: 8px;">
+        <source src="assets/morning.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </ion-card-content>
+</ion-card>
+
+
+  <ion-card class="routine-card">
+    <ion-card-header class="card-header">
+      <ion-card-title>Evening Routine</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Description of Evening Routine -->
+      <p>Wind down your day with these relaxing skincare steps.</p>
+      <!-- List of Evening Routine Steps -->
+      <ul>
+        <li>Step 1: Makeup Remover</li>
+        <li>Step 2: Cleanser</li>
+        <li>Step 3: Exfoliator (if needed)</li>
+        <li>Step 4: Face Mask (optional)</li>
+        <li>Step 5: Serum</li>
+        <li>Step 6: Eye Cream</li>
+        <li>Step 7: Moisturizer</li>
+      </ul>
+      <div style="margin-top: 15px;">
+        <video controls style="width: 100%; height: 200px; border-radius: 8px;">
+          <source src="assets/night.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Additional Skincare Tips -->
+  <div class="tips">
+    <h2>Additional Tips</h2>
+    <p>Here are some extra tips for maintaining healthy skin:</p>
+    <ul>
+      <li>Drink plenty of water</li>
+      <li>Eat a balanced diet rich in fruits and vegetables</li>
+      <li>Protect your skin from the sun with sunscreen</li>
+    </ul>
+    <!-- Image -->
+    <img src="assets/tipsextra.jpeg" alt="Additional Tips Image">
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <!-- Icons -->
+  <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff; padding: 5px; display: flex; justify-content: space-around; border-top-left-radius: 30px; border-top-right-radius: 30px; border-top: 1px solid #ddd;">
+
+    <!-- Home -->
+    <ion-button fill="clear" (click)="goToHomePage()">
+      <ion-label style="font-family: 'Maven Pro', sans-serif; font-weight: bold; font-size: 25px; color: dark;">T.</ion-label>
+    </ion-button>
+
+    <!-- Search -->
+    <ion-button fill="clear" (click)="goToSearchPage()">
+      <ion-icon name="search-outline" color="dark"></ion-icon>
+    </ion-button>
+
+    <!-- Favorites -->
+    <ion-button fill="clear" (click)="goToFavouritesPage()">
+      <ion-icon name="heart-outline" color="dark"></ion-icon>
+    </ion-button>
+
+    <!-- Profile -->
+    <ion-button fill="clear" (click)="goToAccountPage()">
+      <ion-icon name="person-outline" color="dark"></ion-icon>
+    </ion-button>
+
+  </div>
+</ion-content>

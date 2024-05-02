@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+  <!-- page title-->
+    <ion-title style="text-align: center; font-family: 'Maven Pro', sans-serif;">MY ACCOUNT</ion-title>
+    <!-- cart icon -->
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+  <!-- profile picture in a circe-->
+<ion-content class="ion-padding" style="background-image: url('path/to/your/image.jpg'); background-size: cover;">
+  <div style="text-align: center; padding: 16px;">
+    <!-- Profile Image -->
+    <ion-avatar style="margin: auto;" (click)="showOptions = !showOptions">
+      <img *ngIf="userImage" [src]="userImage" alt="User Profile Image" />
+      <ion-icon *ngIf="!userImage" name="person-circle" style="font-size: 5em;"></ion-icon>
+    </ion-avatar>
+    <h2>{{ userName }}</h2>
+  </div>
+
+  <!-- options in account page-->
+  <ion-list class="boxed-section">
+    <ion-item (click)="goToOrdersPage()">
+      <ion-label>My Orders</ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+    <ion-item (click)="goToAddressPage()">
+      <ion-label>Address</ion-label>
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-item>
+
+
+<!-- sign out button-->
+  <div style="text-align: center; padding: 16px;">
+    <ion-button expand="block" (click)="signOut()">
+      <ion-icon name="log-out" slot="start"></ion-icon>
+      Sign Out
+    </ion-button>
+  </div>
+  
+   <!--  options to upload profile pic from device or use camera at that moment-->
+  <ion-list *ngIf="showOptions" class="boxed-section">
+    <ion-item (click)="openFileInput(fileInput)">
+      <ion-label>Upload Photo</ion-label>
+    </ion-item>
+    <ion-item (click)="openCamera()">
+      <ion-label>Use Camera</ion-label>
+    </ion-item>
+  </ion-list>
+
+
+    <!-- camera-->
+  <input type="file" accept="image/*" (change)="handleFileInput($event)" style="display: none;" #fileInput>
+
+  </ion-list>
+  </ion-content>
+  
+  
+  <!-- Icons -->
+  <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff; padding: 5px; display: flex; justify-content: space-around; border-top-left-radius: 30px; border-top-right-radius: 30px; border-top: 1px solid #ddd;">
+    <!-- Home -->
+    <ion-button fill="clear" (click)="goToHomePage()">
+      <ion-label style="font-family: 'Maven Pro', sans-serif; font-weight: bold; font-size: 25px; color: dark;">T.</ion-label>
+    </ion-button>
+    <!-- Search -->
+    <ion-button fill="clear" (click)="goToSearchPage()">
+      <ion-icon name="search-outline" color="dark"></ion-icon>
+    </ion-button>
+    <!-- Favorites -->
+    <ion-button fill="clear" (click)="goToFavouritesPage()">
+      <ion-icon name="heart-outline" color="dark"></ion-icon>
+    </ion-button>
+    <!-- Profile -->
+    <ion-button fill="clear">
+      <ion-icon name="person-outline" color="dark"></ion-icon>
+    </ion-button>
+  </div>
+

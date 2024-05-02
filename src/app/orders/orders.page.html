@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recent orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="white-background">
+
+  <div *ngIf="recentOrder; else noOrdersTemplate">
+    <h2>Recent Order</h2>
+    <p>Order ID: {{ recentOrder.id }}</p>
+    <p>Total Amount: ${{ recentOrder.totalAmount }}</p>
+  </div>
+
+ <!-- No Orders -->
+<ng-template #noOrdersTemplate>
+  <div class="no-orders-container">
+    <p>No orders.</p>
+  </div>
+</ng-template>
+
+
+
+  
+</ion-content>

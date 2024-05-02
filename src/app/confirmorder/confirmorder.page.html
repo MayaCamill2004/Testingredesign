@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Confirm Order</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+//order confirmed
+<ion-content [fullscreen]="true" class="confirm-order-content">
+  <ion-grid>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="12" size-md="6" class="ion-text-center">
+        <img src="https://i.pinimg.com/564x/16/2a/26/162a26f903e6b31f9dfbbebc8fa26c23.jpg" alt="Order Received" class="order-received-image" />
+        <h2 class="thank-you-message">Thank You for Your Order!</h2>
+        <p class="order-received-text">Your order has been received successfully.</p>
+        <ion-button expand="full" color="primary" (click)="continueShopping()">Continue Shopping</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

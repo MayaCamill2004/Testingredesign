@@ -1,0 +1,48 @@
+<ion-header translucent>
+  <!-- Header section of the page -->
+  <ion-toolbar>
+     <!-- Page title -->
+    <ion-title>Typology.</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <!-- Form for logging in -->
+  <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+  
+    <div class="login-header">
+      <h1>Login</h1> <!-- Login header -->
+    </div>
+
+    <ion-list>
+      <!-- Email input field with validation -->
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="user.email" name="email" required email #email="ngModel"></ion-input>
+        <!-- Error message for invalid email input -->
+        <div *ngIf="email.invalid && email.touched" class="error-message">
+          Please enter a valid email.
+        </div>
+      </ion-item>
+
+      <!-- Password input field with validation -->
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password" name="password" required #password="ngModel"></ion-input>
+        <!-- Error message for invalid password input -->
+        <div *ngIf="password.invalid && password.touched" class="error-message">
+          Password is required.
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <!-- Button for logging in with a third-party API (e.g., Spotify) -->
+    <ion-button expand="full" shape="round" (click)="loginWithSpotify()">Login with Spotify</ion-button>
+
+    <!-- Submit button, disabled if form is invalid -->
+    <ion-button type="submit" expand="full" shape="round" [disabled]="loginForm.invalid">Login</ion-button>
+
+    <!-- Link to sign-up page -->
+    <p class="signup-text">Don't have an account? <a href="/signup">Sign up</a></p>
+  </form>
+</ion-content>

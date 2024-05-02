@@ -1,0 +1,70 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/product-details"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="cartItems.length > 0; else emptyCart">
+    <ion-item-sliding *ngFor="let item of cartItems">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img [src]="item.image" alt="{{ item.title }}" style="width: 100%; max-width: 150px; height: auto; object-fit: cover;">
+        </ion-thumbnail>
+    <!-- name and price of product -->
+        <ion-label>
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.price }}</p>
+          
+          <!-- Quantity Display -->
+          <ion-note>Qty: {{ item.quantity }}</ion-note>
+        </ion-label>
+
+        <ion-row class="quantity-row">
+          <ion-button fill="clear" (click)="decreaseQuantity(item)">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+          </ion-button>
+
+          <!-- Quantity -->
+          <ion-label>{{ item.quantity }}</ion-label>
+
+          <ion-button fill="clear" (click)="increaseQuantity(item)">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+        </ion-row>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option (click)="deleteFromCart(item)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+ <!-- when cart is empty-->
+<ng-template #emptyCart>
+  <div class="empty-cart-message">
+    <p>Your cart is empty.</p>
+  </div>
+</ng-template>
+
+
+  <!-- Checkout and Apple Pay buttons -->
+  <ion-row *ngIf="cartItems.length > 0" style="margin-top: 20px; justify-content: space-around;">
+    <ion-button expand="full" color="primary" (click)="checkout()">Checkout</ion-button>
+
+    <!-- Apple Pay button -->
+    <ion-button expand="full" color="light" (click)="applePay()">
+      <ion-icon slot="start" name="logo-apple"></ion-icon>
+      Apple Pay
+    </ion-button>
+  </ion-row>
+</ion-content>
+

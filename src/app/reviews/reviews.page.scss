@@ -1,0 +1,42 @@
+ion-card {
+    margin-bottom: 20px;
+  }
+  
+  ion-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  ion-item {
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+  
+  ion-range {
+    --bar-background-active: var(--ion-color-primary);
+    --knob-background: var(--ion-color-primary);
+    margin-top: 10px;
+  }
+  
+  ion-textarea {
+    --padding-start: 0;
+    --padding-end: 0;
+    --padding-bottom: 0;
+    --padding-top: 0;
+  }
+  
+  ion-button {
+    margin-top: 20px;
+  }
+  
+  ion-grid {
+    height: 100%;
+  }
+  
+  ion-row {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

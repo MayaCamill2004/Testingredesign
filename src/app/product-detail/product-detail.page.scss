@@ -1,0 +1,51 @@
+.product-detail-container {
+  padding: 16px;
+  
+  .product-image {
+    max-width: 300px; 
+    height: auto;
+    display: block;
+    margin: 0 auto 16px;
+  }
+
+  ion-card-header {
+    text-align: left; 
+  }
+  ion-card-header,
+  ion-card-content,
+  .rating-container,
+  .product-description {
+    text-align: left; 
+  }
+ 
+    .rating-container {
+      justify-content: left; 
+      display: flex;
+      align-items: left; 
+    }
+
+    p {
+      font-size: 18px;
+      color: #666;
+      line-height: 1.6;
+      margin: 0; 
+    }
+
+    .product-description {
+      text-align: justify; 
+      margin: 16px 0; 
+    }
+
+    ion-button {
+      --width: 90%; 
+      margin: 0 auto; 
+    }
+  }
+
+
+
+ion-content {
+  font-family: 'Maven Pro', sans-serif;
+}
+
+

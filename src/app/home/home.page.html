@@ -1,0 +1,186 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+
+  <ion-title class="typology-title">Typology.</ion-title>
+
+  <ion-buttons slot="end">
+    <ion-button fill="clear" (click)="goToCartPage()">
+      <ion-icon name="cart-outline" color="dark"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+
+<!-- image with content-->
+<ion-content class="ion-padding">
+  <div style="position: relative; text-align: left; color: black;">
+    <img
+    alt="typology tients"
+    src="https://i.pinimg.com/564x/00/d3/be/00d3be629f7a7045598ba1fe42819637.jpg"
+    style="width: 100%; height: 150px;"
+    (click)="navigateToTintedCareeePage()"
+  />
+  
+
+    <!-- text in white box-->
+    <div style="position: absolute; top: 10%; left: 38%; transform: translate(-20%, -20%); text-align: center;">
+
+      <div style="display: inline-block; background-color: white; border-radius: 60px; padding: 8px;">
+
+        <h1 class="maven-pro-title" style="font-size: 12px; color: black; margin: 0;"> MINIMALIST FORMULAS </h1>
+
+      </div>
+    </div>
+  </div>
+
+  <div style="position: absolute; top: 12%; left: 190px; transform: translate(-50%, -50%); text-align: center;">
+    <h1 class="maven-pro-title" style="font-size: 19px;">Discover our tients</h1>
+
+    <span class="robot-mono-text" style="margin-bottom: 30px; font-weight: 500;">
+      More than ten Natural ingredients!
+    </span>
+
+    <span class="robot-mono-text" style="margin-bottom: 30px;">
+      Fragrance-free, & suitable for sensitive skin.
+    </span>
+  </div>
+
+
+ 
+
+<!-- video-->
+<div id="videoContainer" style="position: absolute; top: 50%; left: 35%; right: 5%; transform: translate(-50%, -50%);">
+  <video width="2000" autoplay loop muted style="max-width: 151%;">
+    <source src="assets/movie.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<!-- shop now in a box-->
+<div style="position: absolute; top: 80%; left: 15px; right: 15px; text-align: center; background-color: black; padding: 10px; border-radius: 0px; cursor: pointer;" (click)="navigateToTintedCareeePage()">
+  <p style="font-family: 'Maven Pro', sans-serif; color: white; margin: 0;">Shop Now</p>
+</div>
+
+<Br>
+  <Br>
+    <Br>
+      <Br>
+        <Br>
+          <Br>
+            <Br>
+              <Br>
+                <Br>
+                  <Br>
+                    <Br>
+                      <Br>
+                        <Br>
+                          <Br>
+                            <Br>
+                              <Br><Br>
+                                <Br>
+                                  <Br>
+                                    <Br>
+
+                                      <Br>
+                                        <Br>
+                                          <Br>
+                                            <Br>
+                                              <Br>
+                                                <Br>
+                                                  <Br>
+
+                                                    <Br>
+
+
+<div class="container">
+  <div class="face-care-container" (click)="navigateToFaceCarePage()">
+    <img src="https://i.pinimg.com/564x/67/16/64/67166433f044aa26a31eec9188666f96.jpg" alt="bestsellers" class="face-care-image">
+    <div class="face-care-text">
+      <p class="face-care-title">FACE CARE</p>
+      <p class="face-care-description">Your right routine</p>
+    </div>
+  </div>
+
+  <div class="body-care-container" (click)="navigateToBodyCarePage()">
+    <img src="https://i.pinimg.com/564x/fe/40/7b/fe407bcc4959b20097a1c2b23399c0dd.jpg" alt="bestsellers" class="body-care-image">
+    <div class="body-care-text">
+      <p class="body-care-title">BODY CARE & HAIR CARE</p>
+      <p class="body-care-description">Balanced scalp</p>
+    </div>
+  </div>
+
+  <div class="skin-ageing-container" (click)="navigateToSkinAgeingPage()">
+    <img src="https://i.pinimg.com/564x/c7/14/62/c714627dc1259751e5298c1edb251352.jpg" alt="bestsellers" class="skin-ageing-image">
+    <div class="skin-ageing-text">
+      <p class="skin-ageing-title">STAGE OF SKIN AGEING</p>
+      <p class="skin-ageing-description">Daily UV exposure</p>
+    </div>
+  </div>
+
+  <div class="by-concern-container" (click)="navigateToByConcernPage()">
+    <img src="https://i.pinimg.com/564x/06/4d/e5/064de5eced657d672f65e368c519ffb5.jpg" alt="bestsellers" class="by-concern-image">
+    <div class="by-concern-text">
+      <p class="by-concern-title">BY CONCERN</p>
+      <p class="by-concern-description">Purifying and rebalancing care</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Trending -->
+<div class="trending-section" >
+  <p class="section-title">Trending</p>
+
+  <div class="trending-item">
+    <img src="https://i.pinimg.com/564x/41/fe/a8/41fea811fbe5adff5078bc9e8293b694.jpg" alt="trending">
+  </div>
+</div>
+
+
+ <!-- shop now in a box-->
+ <div style="position: absolute; top: 240%; left: 15px; right: 15px; text-align: center; background-color: black; padding: 10px; border-radius: 0px;"(click)="navigateToTrending()">
+  <p style="font-family: 'Maven Pro', sans-serif; color: white; margin: 0;">Shop Now</p>
+</div>
+  
+      <p class="underline-button" style="font-family: 'Robot Mono', monospace; font-size: 12px;"></p>
+
+   
+<!-- bottom video-->
+<div style="position: absolute; top: 200%; left: 50%; transform: translate(-20%, -20%); width: 100px; max-width: 100%; height: 550px;">
+
+
+
+</div>
+
+
+
+
+<!-- Icons -->
+<div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff; padding: 5px; display: flex; justify-content: space-around; border-top-left-radius: 30px; border-top-right-radius: 30px; border-top: 1px solid #ddd;">
+
+   <!--Home -->
+   <ion-button fill="clear" (click)="goToHomePage()">
+    <ion-label style="font-family: 'Maven Pro', sans-serif; font-weight: bold; font-size: 25px; color: dark;">T.</ion-label>
+  </ion-button>
+
+  <!-- Search -->
+  <ion-button fill="clear" (click)="goToSearchPage()">
+    <ion-icon name="search-outline" color="dark"></ion-icon>
+  </ion-button>
+
+<!-- Favorites -->
+<ion-button fill="clear" (click)="goToFavouritesPage()">
+  <ion-icon name="heart-outline" color="dark"></ion-icon>
+</ion-button>
+
+
+  <!-- Profile -->
+  <ion-button fill="clear" (click)="goToAccountPage()">
+    <ion-icon name="person-outline" color="dark"></ion-icon>
+  </ion-button>
+
+</div>
+
+</ion-content>

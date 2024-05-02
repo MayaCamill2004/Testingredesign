@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Review Purchase</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid class="ion-align-items-center">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="8">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Rate Your Purchase Experience</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Rating stars -->
+            <ion-list lines="none">
+              <ion-item>
+                <ion-label>Rating</ion-label>
+                <ion-icon *ngFor="let star of [1, 2, 3, 4, 5]" 
+                          [name]="star <= rating ? 'star' : 'star-outline'" 
+                          (click)="rate(star)"
+                          style="font-size: 24px; color: gold;">
+                </ion-icon>
+              </ion-item>
+            </ion-list>
+
+            <!-- Feedback input -->
+            <ion-item>
+              <ion-label position="stacked">Feedback</ion-label>
+              <ion-textarea rows="4" placeholder="Write your feedback here..." [(ngModel)]="feedback"></ion-textarea>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+
+        <!-- Submit button -->
+        <ion-button expand="block" color="primary" (click)="submitReview()">Submit Review</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

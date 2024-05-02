@@ -1,0 +1,89 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ product?.title }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="goToCartPage()">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="product-detail-container">
+    <!-- Product image -->
+    <img [src]="product?.image" alt="{{ product?.title }}" class="product-image">
+
+    <ion-card-header>
+      <ion-card-title>{{ product?.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Rating stars -->
+      <div class="rating-container">
+        <ion-icon name="star" class="star"></ion-icon>
+        <ion-icon name="star" class="star"></ion-icon>
+        <ion-icon name="star" class="star"></ion-icon>
+        <ion-icon name="star" class="star"></ion-icon>
+        <ion-icon name="star-half" class="star"></ion-icon>
+      </div>
+      <p>{{ product?.description }}</p>
+      <p>Price: {{ product?.price }}</p>
+
+      <!-- Description Dropdown -->
+  <ion-item>
+    <ion-label style="font-weight: 600;">Description</ion-label>
+    <ion-icon slot="end" [name]="showDescription ? 'chevron-up-outline' : 'chevron-down-outline'" (click)="toggleDescription()"></ion-icon>
+  </ion-item>
+  <div *ngIf="showDescription">
+    <p class="product-description roboto-mono-font" style="font-weight: 400;">
+      A concentrated serum rich in plant-based keratin and hyaluronic acid to soften hands, nourish cuticles, and strengthen brittle nails.
+
+      93% naturally derived. Vegan. Made in France.
+      <br>
+      <br>
+      Combat the effects of free-radical damage with the concentrated vitamin C Radiance serum. Give your skin light coverage and a smooth, no-makeup finish with the Tinted Serum. Two essentials for natural radiance.
+    </p>
+  </div>
+      <!-- Button to view all reviews -->
+      <ion-button expand="block" (click)="goToReviewsPage()" class="view-all-reviews-button">View All Reviews</ion-button>
+      <br>
+      <ion-button expand="block" (click)="addToBag(product)">Add to Bag</ion-button>
+    </ion-card-content>
+  </div>
+  
+
+     
+
+  <br>
+  <br>
+  <br>
+  <br>
+ 
+
+  <!--  Icons -->
+  <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #fff; padding: 5px; display: flex; justify-content: space-around; border-top-left-radius: 30px; border-top-right-radius: 30px; border-top: 1px solid #ddd;">
+    <!-- Home -->
+    <ion-button fill="clear" (click)="goToHomePage()">
+      <ion-label style="font-family: 'Maven Pro', sans-serif; font-weight: bold; font-size: 25px; color: dark;">T.</ion-label>
+    </ion-button>
+
+    <!--  Search -->
+    <ion-button fill="clear" (click)="goToSearchPage()">
+      <ion-icon name="search-outline" color="dark"></ion-icon>
+    </ion-button>
+
+    <!-- Favorites -->
+    <ion-button fill="clear" (click)="goToFavouritesPage()">
+      <ion-icon name="heart-outline" color="dark"></ion-icon>
+    </ion-button>
+
+    <!-- Profile -->
+    <ion-button fill="clear" (click)="goToAccountPage()">
+      <ion-icon name="person-outline" color="dark"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>

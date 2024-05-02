@@ -1,0 +1,73 @@
+<ion-header translucent>
+  <!-- Header section of the page -->
+  <ion-toolbar>
+    <ion-title>Typology.</ion-title> <!-- Page title -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <!-- Form for signing up -->
+  <form #signupForm="ngForm" (ngSubmit)="onSignup(signupForm)">
+    <div class="signup-header">
+      <h1>Sign Up</h1> <!-- Sign up header -->
+    </div>
+    
+    <ion-list>
+      <!-- First name input field -->
+      <ion-item>
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input type="text" [(ngModel)]="newUser.firstName" name="firstName" required #firstName="ngModel"></ion-input>
+        <!-- Error message for invalid first name input -->
+        <ion-text color="danger" *ngIf="firstName.invalid && firstName.touched">First name is required.</ion-text>
+      </ion-item>
+
+      <!-- Last name input field -->
+      <ion-item>
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input type="text" [(ngModel)]="newUser.lastName" name="lastName" required #lastName="ngModel"></ion-input>
+        <!-- Error message for invalid last name input -->
+        <ion-text color="danger" *ngIf="lastName.invalid && lastName.touched">Last name is required.</ion-text>
+      </ion-item>
+
+      <!-- Email input field with regex pattern validation -->
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="newUser.email" name="email" required email pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #signupEmail="ngModel"></ion-input>
+        <!-- Error message for invalid email input -->
+        <ion-text color="danger" *ngIf="signupEmail.invalid && signupEmail.touched">
+
+        </ion-text>
+      </ion-item>
+
+      <!-- Password input field with regex pattern validation -->
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="newUser.password" name="password" required pattern="^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$" #signupPassword="ngModel"></ion-input>
+        <!-- Error message for invalid password input -->
+        <ion-text color="danger" *ngIf="signupPassword.invalid && signupPassword.touched">
+          Password must be at least 8 characters long, contain one uppercase letter and one number.
+        </ion-text>
+      </ion-item>
+
+      <!-- Confirm password input field -->
+      <ion-item>
+        <ion-label position="floating">Confirm Password</ion-label>
+        <ion-input type="password" [(ngModel)]="newUser.confirmPassword" name="confirmPassword" required #confirmPassword="ngModel"></ion-input>
+        <!-- Error message for invalid confirm password input -->
+        <ion-text color="danger" *ngIf="confirmPassword.invalid && confirmPassword.touched">
+          Confirm password is required.
+        </ion-text>
+        <!-- Error message for mismatched passwords -->
+        <ion-text color="danger" *ngIf="newUser.password !== newUser.confirmPassword && confirmPassword.touched">
+          Passwords do not match.
+        </ion-text>
+      </ion-item>
+    </ion-list>
+
+    <!-- Submit button, disabled if form is invalid -->
+    <ion-button type="submit" expand="full" shape="round" [disabled]="signupForm.invalid">Sign Up</ion-button>
+    
+    <!-- Link to login page -->
+    <p class="login-text">Already have an account? <a href="/login">Login</a></p>
+  </form>
+</ion-content>

@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/cart"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Address</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Information about user -->
+<ion-content class="ion-padding">
+  <form #addressForm="ngForm" (ngSubmit)="confirmAddress()" novalidate>
+    <!-- First Name -->
+    <ion-item>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input
+        [(ngModel)]="firstName"
+        name="firstName"
+        type="text"
+        required
+        #firstNameInput="ngModel"
+      ></ion-input>
+      <!-- Error message -->
+      <ion-note *ngIf="firstNameInput.invalid && firstNameInput.touched" color="danger">
+        First Name is required.
+      </ion-note>
+    </ion-item>
+
+    <!-- Last Name -->
+    <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input
+        [(ngModel)]="lastName"
+        name="lastName"
+        type="text"
+        required
+        #lastNameInput="ngModel"
+      ></ion-input>
+      <!-- Error message -->
+      <ion-note *ngIf="lastNameInput.invalid && lastNameInput.touched" color="danger">
+        Last Name is required.
+      </ion-note>
+    </ion-item>
+
+    <!-- Mobile -->
+    <ion-item>
+      <ion-label position="floating">Mobile</ion-label>
+      <ion-input
+        [(ngModel)]="mobile"
+        name="mobile"
+        type="tel"
+        required
+        pattern="^[0-9]+$"
+        #mobileInput="ngModel"
+      ></ion-input>
+      <!-- Error message -->
+      <ion-note *ngIf="mobileInput.invalid && mobileInput.touched" color="danger">
+        Mobile must be a valid number.
+      </ion-note>
+    </ion-item>
+
+    <!-- Country -->
+    <ion-item>
+      <ion-label>Country</ion-label>
+      <ion-select [(ngModel)]="selectedCountry" name="selectedCountry" required>
+        <ion-select-option *ngFor="let country of countries" [value]="country.value">
+          {{ country.label }}
+        </ion-select-option>
+      </ion-select>
+      <!-- Error message -->
+      <ion-note *ngIf="addressForm.controls['selectedCountry']?.invalid && addressForm.controls['selectedCountry']?.touched" color="danger">
+        Country is required.
+      </ion-note>
+    </ion-item>
+
+    <!-- Address -->
+    <ion-item>
+      <ion-label position="floating">Address</ion-label>
+      <ion-input
+        [(ngModel)]="address"
+        name="address"
+        type="text"
+        required
+        #addressInput="ngModel"
+      ></ion-input>
+      <!-- Error message -->
+      <ion-note *ngIf="addressInput.invalid && addressInput.touched" color="danger">
+        Address is required.
+      </ion-note>
+    </ion-item>
+
+    <!-- Town/City -->
+    <ion-item>
+      <ion-label position="floating">Town/City</ion-label>
+      <ion-input
+        [(ngModel)]="townCity"
+        name="townCity"
+        type="text"
+        required
+        #townCityInput="ngModel"
+      ></ion-input>
+      <!-- Error message -->
+      <ion-note *ngIf="townCityInput.invalid && townCityInput.touched" color="danger">
+        Town/City is required.
+      </ion-note>
+    </ion-item>
+
+    <!-- Postcode -->
+    <ion-item>
+      <ion-label position="floating">Postcode</ion-label>
+      <ion-input
+        [(ngModel)]="postcode"
+        name="postcode"
+        type="text"
+        required
+        pattern="^[A-Z]{3}[0-9]{3}$"
+        #postcodeInput="ngModel"
+      ></ion-input>
+      <!-- Error message -->
+      <ion-note *ngIf="postcodeInput.invalid && postcodeInput.touched" color="danger">
+        Postcode must be in the format of 3 letters followed by 3 digits.
+      </ion-note>
+    </ion-item>
+
+    <!-- Confirm Button -->
+    <ion-button type="submit" expand="full" color="primary" [disabled]="addressForm.invalid">
+      Confirm Address
+    </ion-button>
+  </form>
+</ion-content>
